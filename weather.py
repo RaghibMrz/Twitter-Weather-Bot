@@ -125,8 +125,8 @@ def getDailyText():
     return mkDailyReport(getData())
 
 
-schedule.every().hour.do(tweetHourlyText())
-schedule.every().day.do(tweetDailyText())
+schedule.every().hour.do(tweetHourlyText)
+schedule.every().day.at("00:00").do(tweetDailyText)
 
 while True:
     print("Running")
